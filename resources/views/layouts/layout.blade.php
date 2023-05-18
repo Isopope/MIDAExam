@@ -78,6 +78,7 @@
                         <p>{{$restaurant->adresse}}</p>
                     </div>
                     <a href="#" class="menu_btn">Reservez</a>
+                    
                 </div>
 
             </div> 

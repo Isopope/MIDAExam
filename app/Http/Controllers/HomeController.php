@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,10 +10,11 @@ class HomeController extends Controller
 {
     //
     public function RedirigerVers(){
+        $restaurants=Restaurant::all()->take(10);
         $user_role=Auth::User()->user_role;
 
         if($user_role==='client'){
-            return view('/dashboard');
+            return view('/dashboard',compact('restaurants'));
         }else{
             return view('/adminview');
         }
