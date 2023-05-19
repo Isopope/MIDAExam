@@ -1,6 +1,11 @@
 @extends('layouts.layoutreservations')
 
 @section('reservationtable')
-    <p>salut</p>
+       
+
+            @include('layouts.table')
+
+    
+    
     
 @endsection

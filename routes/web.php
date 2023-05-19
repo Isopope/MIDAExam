@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RestaurantController;
-use App\Models\Restaurant;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,15 @@ Route::get('/', function () {
     return view('index',compact('restaurants'));
 });
 Route::post('/restaurantUpload',[RestaurantController::class,'restaurantUpload']);
-Route::get('/RedirigerVers',[HomeController::class,'RedirigerVers']);
-Route::get('/restaurant',[HomeController::class,'restaurantview']);
-Route::get('/repas',[HomeController::class,'repasview']);
-Route::get('/local',[HomeController::class,'localview']);
-Route::get('/reservation',[HomeController::class,'reservationview']);
-Route::get('/reservations',[HomeController::class,'reservationsview']);
+Route::get('/RedirigerVers',[HomeController::class,'RedirigerVers'])->name('RedirigerVers');
+Route::get('/restaurant',[HomeController::class,'restaurantview'])->name('restaurant');
+Route::get('/repas',[HomeController::class,'repasview'])->name('repasview');
+Route::get('/local',[HomeController::class,'localview'])->name('localview');
+Route::get('/reservation',[ReservationController::class,'reservationview'])->name('reservation');
+Route::get('/reservation/{id}/updateState', [ReservationController::class,'updateState'])->name('reservation.updateState');
+Route::get('/reservation/{id}/updateStateR', [ReservationController::class,'updateStateR'])->name('reservation.updateStateR');
+Route::get('/reservations',[HomeController::class,'reservationsview'])->name('reservations');
+Route::get('/reservations/{id}',[HomeController::class,'deleteReservation'])->name('reservations.deleteReservation');
 
 
 Route::get('/dashboard', function () {

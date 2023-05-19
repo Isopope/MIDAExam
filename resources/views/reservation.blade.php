@@ -5,9 +5,8 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Table des réservations</h1>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="./">Home</a></li>
-        <li class="breadcrumb-item">Tables</li>
-        <li class="breadcrumb-item active" aria-current="page">Simple Tables</li>
+        <li class="breadcrumb-item"><a href="./">Acceuil</a></li>
+        <li class="breadcrumb-item">Demandes de reservation</li>
       </ol>
     </div>
 
@@ -25,7 +24,9 @@
                   <th>Id de reservation</th>
                   <th>Nom du client</th>
                   <th>Email du client</th>
+                  <th>Nom du restaurant</th>
                   <th>Heure de reservation</th>
+                  <th>Commentaire de reservation</th>
                   <th>Status</th>
                   <th>Accepter</th>
                   <th>Refuser</th>
@@ -33,15 +34,28 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><a href="#">RA0449</a></td>
-                  <td>nkouba humbert</td>
-                  <td>nkoubah@gmail.com</td>
-                  <td>lundi 17h</td>
-                  <td><span class="badge badge-success">Delivered</span></td>
-                  <td><a href="#" class="btn btn-sm btn-primary">Accepter</a></td>
-                  <td><a href="#" class="btn btn-sm btn-primary" style="background-color: #fc544b;">Refuser</a></td>
-                </tr>
+              @foreach ($reservations as $reservation )
+              <tr>
+                <td><a href="#">{{$reservation->id_reservation}}</a></td>
+                <td>{{$reservation->username}}</td>
+                <td>{{$reservation->useremail}}</td>
+                <td>{{$reservation->reservation_resto_name}}</td>
+                <td>{{$reservation->reservation_date}}</td>
+                <td>{{$reservation->reservation_comment}}</td>
+                @if ($reservation->reservation_state==='EN ATTENTE')
+                <td><span class="badge badge-warning" >{{$reservation->reservation_state}}</span></td>
+                @elseif ($reservation->reservation_state==='ACCEPTER')
+                <td><span class="badge badge-success">{{$reservation->reservation_state}}</span></td>
+
+                @else
+                <td><span class="badge badge-danger">{{$reservation->reservation_state}}</span></td>
+                  
+                @endif
+                
+                <td><a href="{{route('reservation.updateState',['id'=>$reservation->id_reservation])}}" class="btn btn-sm btn-primary">Accepter</a></td>
+                <td><a href="{{route('reservation.updateStateR',['id'=>$reservation->id_reservation])}}" class="btn btn-sm btn-primary" style="background-color: #fc544b;">Refuser</a></td>
+              </tr>
+              @endforeach
               </tbody>
             </table>
           </div>
