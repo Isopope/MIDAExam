@@ -50,6 +50,17 @@ class HomeController extends Controller
         return redirect()->back();
         
     }
+
+    public function searchrestaurant(Request $request){
+        if($request->search){
+            $searchrestaurant=Restaurant::where('resto_name','LIKE', '%'.$request->search.'%')->latest()->paginate(10); 
+            //dd($searchrestaurant);
+            return view('searchresult',compact('searchrestaurant'));
+        }else{
+            return redirect()->back()->with('message','restaurant non trouvé'); 
+        }
+
+    }
     
     
 }

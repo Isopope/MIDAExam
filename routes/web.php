@@ -32,6 +32,7 @@ Route::get('/reservation/{id}/updateState', [ReservationController::class,'updat
 Route::get('/reservation/{id}/updateStateR', [ReservationController::class,'updateStateR'])->name('reservation.updateStateR');
 Route::get('/reservations',[HomeController::class,'reservationsview'])->name('reservations');
 Route::get('/reservations/{id}',[HomeController::class,'deleteReservation'])->name('reservations.deleteReservation');
+Route::get('search',[HomeController::class,'searchrestaurant']);
 
 
 Route::get('/dashboard', function () {
