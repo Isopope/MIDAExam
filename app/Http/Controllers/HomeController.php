@@ -27,11 +27,15 @@ class HomeController extends Controller
     }
 
     public function repasview(){
-        return view('/repas');
+        $id_proprietaire=Auth::id();
+        $restaurants= DB::select(DB::raw("SELECT restaurants.resto_name as resto_name,restaurants.id as resto_id FROM reservations join restaurants on reservations.restaurant_id=restaurants.id join users on reservations.user_id=users.id where  restaurants.user_id=$id_proprietaire"));
+        return view('/repas',compact('restaurants'));
     }
 
     public function localview(){
-        return view('/local');
+        $id_proprietaire=Auth::id();
+        $restaurants= DB::select(DB::raw("SELECT restaurants.resto_name as resto_name,restaurants.id as resto_id FROM reservations join restaurants on reservations.restaurant_id=restaurants.id join users on reservations.user_id=users.id where  restaurants.user_id=$id_proprietaire"));
+        return view('/local',compact('restaurants'));
     }
 
     

@@ -32,5 +32,8 @@
         @endforeach    
     </div>
 </div>
+<div>
+
+</div>
 
 @include('layouts.footer')

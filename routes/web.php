@@ -4,6 +4,8 @@ use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocalController;
+use App\Http\Controllers\RepasController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReservationController;
 
@@ -33,6 +35,8 @@ Route::get('/reservation/{id}/updateStateR', [ReservationController::class,'upda
 Route::get('/reservations',[HomeController::class,'reservationsview'])->name('reservations');
 Route::get('/reservations/{id}',[HomeController::class,'deleteReservation'])->name('reservations.deleteReservation');
 Route::get('search',[HomeController::class,'searchrestaurant']);
+Route::post('/foodUpload',[RepasController::class,'foodUpload']);
+Route::post('/localUpload',[LocalController::class,'localUpload']);
 
 
 Route::get('/dashboard', function () {
