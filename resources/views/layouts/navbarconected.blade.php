@@ -1,6 +1,6 @@
 <nav>
     <div class="logo">
-        <img src="image/logo.png">
+        <img src="{{asset('image/logo.png')}}">
     </div>
     @if(Route::has('login'))
         @auth

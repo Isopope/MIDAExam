@@ -11,6 +11,17 @@ use Illuminate\Support\Facades\Auth;
 class RepasController extends Controller
 {
     //
+
+    public function fooddelete($id){
+        $food=Food::findOrFail($id);
+        $food->delete();
+        return redirect()->back();
+    }
+
+    public function foodshow(){
+        $food=Food::all();
+        return view ('fooddisplay',compact('food'));
+    }
     public function foodUpload(Request $request){
 
        

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restaurant;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,6 +33,16 @@ class ReservationController extends Controller
         $reservation_id=Reservation::findOrFail($id);
         $reservation_id->reservation_state=Reservation::STATE_REFUSER;
         $reservation_id->save();
+        return redirect()->back();
+    }
+
+    public function makeReservation(Request $request,$id){
+        $data=new Reservation();
+        $data->reservation_date=$request->reservation_date;
+        $data->reservation_comment=$request->reservation_comment;
+        $data->user_id=Auth::id();
+        $data->restaurant_id=$id;// a revoir plus tard
+        $data->save();
         return redirect()->back();
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Reservation;
+use App\Models\Food;
+use App\Models\Local;
 use App\Models\Restaurant;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +66,14 @@ class HomeController extends Controller
             return redirect()->back()->with('message','restaurant non trouvé'); 
         }
 
+    }
+
+    public function detailView($id){
+        $restaurant=Restaurant::findOrFail($id);
+        $locals=Local::where('restaurant_id','=',$id)->get();
+        $repas=Food::where('restaurant_id','=',$id)->get();
+        //dd($local,$repas,$data);
+        return view('restodetail',compact('restaurant','locals','repas'));
     }
     
     

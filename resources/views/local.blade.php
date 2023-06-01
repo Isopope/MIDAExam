@@ -2,10 +2,10 @@
 @section('content')
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Ajouter un repas à votre restaurant</h1>
+      <h1 class="h3 mb-0 text-gray-800">Ajouter des photos des locaux de votre restaurant</h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="./">Acceuil</a></li>
-        <li class="breadcrumb-item">Repas</li>
+        <li class="breadcrumb-item">Local</li>
       </ol>
     </div>
 

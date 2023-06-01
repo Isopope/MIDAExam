@@ -1,46 +1,24 @@
 <div class="order" id="Order">
-    <h1><span>Order</span>Now</h1>
+    <h1><span>Reservez maintenant</span></h1>
 
     <div class="order_main">
 
         <div class="order_image">
-            <img src="image/order_image.png">
+            <img src="{{asset('image/order_image.png')}}">
         </div>
 
-        <form method="POST" action="#">
+        <form method="POST" action="{{route('makeReservation',['id'=>$restaurant->id])}}">
             @csrf
-
             <div class="input">
-                <p>Name</p>
-                <input type="text" placeholder="you name">
+                <p>Date de reservation</p>
+                <input type="date" id="reservation_date" name="reservation_date" required>
             </div>
 
             <div class="input">
-                <p>Email</p>
-                <input type="email" placeholder="you email">
+                <p>Commentaire de réservation</p>
+                <input type="text" id="reservation_comment" name="reservation_comment" required>
             </div>
-
-            <div class="input">
-                <p>Number</p>
-                <input placeholder="you number">
-            </div>
-
-            <div class="input">
-                <p>How Much</p>
-                <input type="number" placeholder="how many order">
-            </div>
-
-            <div class="input">
-                <p>You Order</p>
-                <input placeholder="food name">
-            </div>
-
-            <div class="input">
-                <p>Address</p>
-                <input placeholder="you Address">
-            </div>
-
-            <a href="#" class="order_btn">Order Now</a>
+            <button type="submit" class="btn btn-warning">Reservez maintenant</button>
 
         </form>
 

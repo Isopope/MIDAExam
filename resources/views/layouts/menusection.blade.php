@@ -22,7 +22,7 @@
                 <div class="menu_icon">
                     <p>{{$restaurant->adresse}}</p>
                 </div>
-                <a href="#" class="menu_btn">Reservez</a>
+                <a href="{{route('reservation.detailView',['id'=>$restaurant->id])}}" class="menu_btn">Reservez</a>
                 
             </div>
 

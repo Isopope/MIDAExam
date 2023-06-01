@@ -7,7 +7,7 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="{{asset('style1.css')}}" />
     <title>Authentification</title>
   </head>
   <body>
@@ -93,7 +93,7 @@
               Créer un compte
             </button>
           </div>
-          <img src="image/Food-Plate.png" class="image" alt="" />
+          <img src="{{asset('image/Food-Plate.png')}}" class="image" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -105,7 +105,7 @@
               Se connecter
             </button>
           </div>
-          <img src="image/bell-pepper-1297918_640.png" class="image" alt="" />
+          <img src="{{asset('image/bell-pepper-1297918_640.png')}}" class="image" alt="" />
         </div>
       </div>
     </div>

@@ -8,6 +8,19 @@ use Illuminate\Http\Request;
 class LocalController extends Controller
 {
     //
+    
+
+    public function localshow(){
+        $local= Local::all();
+        return view('localdisplay',compact('local'));
+    }
+
+    public function localdelete($id){
+        $local= Local::findOrFail($id);
+        dd($local);
+        $local->delete();
+        return redirect()->back();
+    }
     public function localUpload(Request $request){
         $data= new Local();
             /*$image=$request->resto_affiche;

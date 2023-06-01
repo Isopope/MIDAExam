@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNN9LT5GNB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CNN9LT5GNB');
+  </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,9 +18,9 @@
   <meta name="author" content="hnk">
   <link href="img/logo/logo.png" rel="icon">
   <title>Dashboard</title>
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('css/ruang-admin.min.css')}}" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +29,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color:white; " href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="image/logo.png">
+          <img src="{{asset('image/logo.png')}}">
         </div>
         
       </a>
@@ -144,11 +153,16 @@
                 <span class="ml-2 d-none d-lg-inline text-white small">Bienvenue {{Auth::User()->name}}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <form method="GET" action="./">
+                  <input type="submit" class="btn" value="Acceuil" style="background: rgb(255, 255, 255); color:rgb(0, 0, 0) ; width:150px; padding:2px 15px;" />
+              </form>
                 <form method="POST" action="{{route('logout')}}">
                   @csrf
                   
                   <input type="submit" class="btn" value="Se deconnecter" style="background: rgb(255, 255, 255); color:rgb(0, 0, 0) ; width:150px; padding:2px 15px;" />
               </form>
+              
+              
                 
               </div>
             </li>
@@ -179,10 +193,10 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/ruang-admin.min.js"></script>
+  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script src="{{asset('js/ruang-admin.min.js')}}"></script>
 
 </body>
 
