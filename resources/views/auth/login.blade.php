@@ -62,6 +62,15 @@
               <i class="fas fa-lock"></i>
               <input name="password_confirmation" id="password_confirmation" type="password" placeholder="Confirm password" required />
             </div>
+            
+            <div class="input-field" style="background: none;">
+              <input type="radio" id="admin" name="radio-group" value="admin">
+              <label for="option1">Etes-vous propriétaire de restaurant?</label>
+            
+              <input type="radio" id="client" name="radio-group" value="client">
+              <label for="option2">Etes-vous un client?</label>
+            </div>
+            
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Suivez nous, sur nos différents réseaux sociaux</p>
             <div class="social-media">

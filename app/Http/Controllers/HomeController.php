@@ -18,7 +18,7 @@ class HomeController extends Controller
         $user_role=Auth::User()->user_role;
 
         if($user_role==='client'){
-            return view('/dashboard',compact('restaurants'));
+            return view('/index',compact('restaurants'));
         }else{
             return view('/adminview');
         }

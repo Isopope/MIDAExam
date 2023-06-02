@@ -76,7 +76,7 @@
 	  </div>
 	</div>
   </div>
- @include('food')
+ @include('layouts.food')
 
 @include('layouts.order')
 @include('layouts.footer')
