@@ -16,11 +16,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="panel d'admininistration de resto-place">
   <meta name="author" content="hnk">
-  <link href="{{asset('img/logo/logo.png')}}" rel="icon">
+  <link href="{{url('img/logo/logo.png')}}" rel="icon">
   <title>Dashboard</title>
-  <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-  <link href="{{asset('css/ruang-admin.min.css')}}" rel="stylesheet">
+  <link href="{{url('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{url('css/ruang-admin.min.css')}}" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -29,7 +29,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color:white; " href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="{{asset('image/logo.png')}}">
+          <img src="{{url('image/logo.png')}}">
         </div>
         
       </a>
@@ -193,10 +193,10 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-  <script src="{{asset('js/ruang-admin.min.js')}}"></script>
+  <script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script src="{{url('js/ruang-admin.min.js')}}"></script>
 
 </body>
 

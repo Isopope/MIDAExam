@@ -8,7 +8,7 @@
         <div class="menu_card">
 
             <div class="menu_image">
-                <img src="{{asset('resto_affiche/'.$restaurant->resto_affiche)}}">
+                <img src="{{url('resto_affiche/'.$restaurant->resto_affiche)}}">
             </div>
 
             <div class="small_card">

@@ -28,7 +28,7 @@
          
 
             <div class="main_image">
-                <img src="{{asset('image/cote.webp')}}">
+                <img src="{{url('image/cote.webp')}}">
             </div>
         
          

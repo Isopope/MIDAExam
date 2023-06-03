@@ -4,7 +4,7 @@
     <div class="order_main">
 
         <div class="order_image">
-            <img src="{{asset('image/order_image.png')}}">
+            <img src="{{url('image/order_image.png')}}">
         </div>
 
         <form method="POST" action="{{route('makeReservation',['id'=>$restaurant->id])}}">

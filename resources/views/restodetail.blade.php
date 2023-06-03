@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rest-place</title>
-    <link rel="stylesheet" href="{{asset('style2.css')}}">
+    <link rel="stylesheet" href="{{url('style2.css')}}">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style type="text/css">
@@ -40,7 +40,7 @@
 					@foreach ($locals as $local )
 						<div class="swiper-slide">
 							<div class="img_box">
-							<img src="{{asset('local_photo/'.$local->local_photo)}}">
+							<img src="{{url('local_photo/'.$local->local_photo)}}">
 							</div>
 						</div>
 					@endforeach
