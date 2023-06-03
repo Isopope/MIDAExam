@@ -41,7 +41,7 @@ class ReservationController extends Controller
         $data->reservation_date=$request->reservation_date;
         $data->reservation_comment=$request->reservation_comment;
         $data->user_id=Auth::id();
-        $data->restaurant_id=$id;// a revoir plus tard
+        $data->restaurant_id=$id;
         $data->save();
         return redirect()->back();
     }
